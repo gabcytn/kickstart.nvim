@@ -86,6 +86,11 @@ P.S. You can delete this when you're done too. It's your config now! :)
 
 -- Set <space> as the leader key
 -- See `:help mapleader`
+
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+vim.g.nvim_tree_auto_open = 1
+
 --  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
@@ -94,7 +99,7 @@ vim.g.maplocalleader = ' '
 vim.g.have_nerd_font = true
 
 -- Enable autocompletion without typing a letter
-vim.o.completeopt = "menuone,noinsert,noselect"
+vim.o.completeopt = 'menuone,noinsert,noselect'
 
 -- [[ Setting options ]]
 -- See `:help vim.opt`
@@ -236,13 +241,36 @@ require('lazy').setup({
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
 
+  {
+    'nvim-tree/nvim-tree.lua',
+    config = function()
+      require('nvim-tree').setup {
+        sort = {
+          sorter = 'case_sensitive',
+        },
+        view = {
+          width = 30,
+          relativenumber = true,
+        },
+        renderer = {
+          group_empty = true,
+          add_trailing = true,
+        },
+        filters = {
+          git_ignored = false,
+        },
+      }
+
+      vim.api.nvim_set_keymap('n', '<C-n>', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
+    end,
+  },
+
   -- NOTE: Plugins can also be added by using a table,
   -- with the first argument being the link and the following
   -- keys can be used to configure plugin behavior/loading/etc.
   --
   -- Use `opts = {}` to force a plugin to be loaded.
   --
-
   -- Here is a more advanced example where we pass configuration
   -- options to `gitsigns.nvim`. This is equivalent to the following Lua:
   --    require('gitsigns').setup({ ... })
