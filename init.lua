@@ -618,7 +618,7 @@ require('lazy').setup({
         eslint = {},
         intelephense = {},
         jdtls = {},
-        -- clangd = {},
+        clangd = {},
         -- gopls = {},
         -- pyright = {},
         -- rust_analyzer = {},
