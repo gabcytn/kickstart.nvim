@@ -19,6 +19,7 @@ return {
         mappings = {
           ['\\'] = 'close_window',
         },
+        line_numbers = true,
       },
       filtered_items = {
         visible = true,
