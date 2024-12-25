@@ -149,6 +149,10 @@ vim.opt.splitbelow = true
 vim.opt.list = true
 vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 
+vim.o.tabstop = 4 -- Number of spaces that a <Tab> counts for
+vim.o.shiftwidth = 4 -- Number of spaces to use for each step of (auto)indent
+vim.o.expandtab = true -- Convert tabs to spaces
+
 -- Preview substitutions live, as you type!
 vim.opt.inccommand = 'split'
 
@@ -621,6 +625,7 @@ require('lazy').setup({
         jdtls = {},
         clangd = {},
         emmet_ls = {},
+        cssls = {},
         -- gopls = {},
         -- pyright = {},
         -- rust_analyzer = {},
