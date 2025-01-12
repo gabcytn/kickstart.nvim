@@ -626,8 +626,9 @@ require('lazy').setup({
         clangd = {},
         emmet_ls = {},
         cssls = {},
+        pyright = {},
+        bashls = {},
         -- gopls = {},
-        -- pyright = {},
         -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
@@ -728,8 +729,13 @@ require('lazy').setup({
         typescript = { 'prettier', stop_after_first = true },
         typescriptreact = { 'prettier', stop_after_first = true },
         javascriptreact = { 'prettier', stop_after_first = true },
+        python = { 'black' },
+        sh = { 'shfmt' },
       },
     },
+  },
+  {
+    'mfussenegger/nvim-jdtls',
   },
 
   { -- Autocompletion
