@@ -168,6 +168,10 @@ vim.opt.confirm = true
 --  See `:help hlsearch`
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
+-- Custom keymaps
+vim.keymap.set('n', '<leader>b', ':ls<CR>', { desc = 'Show buffer list' })
+vim.keymap.set('n', '<leader>;', ':lua vim.diagnostic.open_float()<CR>', { desc = 'Show error float' })
+
 -- Diagnostic keymaps
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
@@ -679,7 +683,8 @@ require('lazy').setup({
         --    https://github.com/pmizio/typescript-tools.nvim
         --
         -- But for many setups, the LSP (`ts_ls`) will work just fine
-        -- ts_ls = {},
+        ts_ls = {},
+        jdtls = {},
         --
 
         lua_ls = {
@@ -759,7 +764,7 @@ require('lazy').setup({
           return nil
         else
           return {
-            timeout_ms = 500,
+            timeout_ms = 2000,
             lsp_format = 'fallback',
           }
         end
@@ -773,6 +778,9 @@ require('lazy').setup({
         javascript = { 'prettierd', 'prettier', stop_after_first = true },
         typescript = { 'prettierd', 'prettier', stop_after_first = true },
         typescriptreact = { 'prettierd', 'prettier', stop_after_first = true },
+        java = { 'clang-format' },
+        blade = { 'blade-formatter' },
+        php = { 'php-cs-fixer', 'pretty-php' },
       },
     },
   },
