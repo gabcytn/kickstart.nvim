@@ -104,6 +104,10 @@ vim.opt.number = true
 --  Experiment for yourself to see if you like it!
 vim.opt.relativenumber = true
 
+vim.o.tabstop = 4 -- Number of spaces that a <Tab> counts for
+vim.o.shiftwidth = 4 -- Number of spaces to use for each step of (auto)indent
+vim.opt.wrap = false -- :set nowrap
+
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.opt.mouse = 'a'
 
@@ -684,9 +688,6 @@ require('lazy').setup({
         --
         -- But for many setups, the LSP (`ts_ls`) will work just fine
         ts_ls = {},
-        jdtls = {},
-        --
-
         lua_ls = {
           -- cmd = { ... },
           -- filetypes = { ... },
