@@ -773,7 +773,7 @@ require('lazy').setup({
         javascript = { 'prettierd', 'prettier', stop_after_first = true },
         typescript = { 'prettierd', 'prettier', stop_after_first = true },
         typescriptreact = { 'prettierd', 'prettier', stop_after_first = true },
-        java = { 'clang-format' },
+        java = { 'google-java-format' },
         blade = { 'blade-formatter' },
         php = { 'php-cs-fixer', 'pretty-php' },
       },
@@ -897,7 +897,7 @@ require('lazy').setup({
       -- Load the colorscheme here.
       -- Like many other themes, this one has different styles, and you could load
       -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-      vim.cmd.colorscheme 'habamax'
+      vim.cmd.colorscheme 'sonokai'
     end,
   },
 
