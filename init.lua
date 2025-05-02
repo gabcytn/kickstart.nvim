@@ -175,6 +175,8 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 -- Custom keymaps
 vim.keymap.set('n', '<leader>b', ':ls<CR>', { desc = 'Show buffer list' })
 vim.keymap.set('n', '<leader>;', ':lua vim.diagnostic.open_float()<CR>', { desc = 'Show error float' })
+vim.keymap.set('n', '<leader>%', ':vsplit<CR>', { desc = 'Vertical split' })
+vim.keymap.set('n', '<leader>"', ':split<CR>', { desc = 'Horizontal split' })
 
 -- Diagnostic keymaps
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
